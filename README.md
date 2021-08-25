@@ -7,6 +7,6 @@ O projeto consiste em criar uma lâmpada que tenha três ações:
 
 Todo o código foi construído seguindo as boas praticas, com responsabilidade única e funções puras.
 
-[Linkedin](https://www.linkedin.com/in/ana-ara%C3%BAjo-677592212) da desenvolvedora
+[Linkedin](https://www.linkedin.com/in/ana-ara%C3%BAjo-677592212) da desenvolvedora!
 
 ![](img/Projeto.PNG)
