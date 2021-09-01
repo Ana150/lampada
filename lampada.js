@@ -13,6 +13,9 @@ function botoesLidaDesliga(estadoLiga, estadoDesliga, estadoPisca){
     botaoPiscar.disabled = estadoPisca
 }
 
+let idDesligar
+let idLigar
+
 function lampadaQuebrada (){
     const lampada = document.getElementById("lampada")
     return lampada.src.indexOf('quebrada') !== -1
@@ -33,13 +36,21 @@ function desligarLampada() {
     }
 }
 
-function piscarLampada() {
+function pararPiscar(){
+    clearInterval(idLigar)
+    clearInterval(idDesligar)
+}
 
-    if (!lampadaQuebrada()){
-        lampada.src = "img/desligada.jpg"
-        lampada.src = "img/ligada.jpg"
-        botoesLidaDesliga(false, false, true)
-    }
+function piscar() {
+    const botaoPiscar = document.getElementById('piscar')
+    if (botaoPiscar.textContent == 'Piscar'){
+        idLigar = setInterval(ligarLampada, 500)
+        idDesligar = setInterval(desligarLampada, 1000)
+        botaoPiscar.textContent = 'Parar'
+    }else{
+        pararPiscar()
+        botaoPiscar.textContent = 'Piscar'
+    }  
 }
 
 function quebrarLampada() {
@@ -51,7 +62,7 @@ function quebrarLampada() {
 //eventos
 document.getElementById('ligar').addEventListener("click", ligarLampada)
 document.getElementById('desligar').addEventListener("click", desligarLampada)
-document.getElementById('piscar').addEventListener("click", piscarLampada)
 document.getElementById('lampada').addEventListener("mouseover", ligarLampada)
 document.getElementById('lampada').addEventListener("mouseleave", desligarLampada)
 document.getElementById('lampada').addEventListener("dblclick", quebrarLampada)
+document.getElementById('piscar').addEventListener("click", piscar)
