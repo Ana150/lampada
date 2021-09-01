@@ -16,19 +16,26 @@ function botoesLidaDesliga(estadoLiga, estadoDesliga, estadoPisca){
 let idDesligar
 let idLigar
 
-function lampadaQuebrada (){
+const lampadaQuebrada = () => {
     const lampada = document.getElementById("lampada")
     return lampada.src.indexOf('quebrada') !== -1
 }
 
-function ligarLampada() {
+// function ligarLampada() {
+//     if (!lampadaQuebrada()){
+//         lampada.src = "img/ligada.jpg"
+//         botoesLidaDesliga(true, false, false)
+//     }   
+// }
+
+const ligarLampada = () => {
     if (!lampadaQuebrada()){
         lampada.src = "img/ligada.jpg"
         botoesLidaDesliga(true, false, false)
     }   
 }
 
-function desligarLampada() {
+const desligarLampada = () => {
 
     if (!lampadaQuebrada()){
         lampada.src = "img/desligada.jpg"
@@ -36,12 +43,12 @@ function desligarLampada() {
     }
 }
 
-function pararPiscar(){
+const pararPiscar = () => {
     clearInterval(idLigar)
     clearInterval(idDesligar)
 }
 
-function piscar() {
+const piscar = () => {
     const botaoPiscar = document.getElementById('piscar')
     if (botaoPiscar.textContent == 'Piscar'){
         idLigar = setInterval(ligarLampada, 500)
@@ -53,7 +60,7 @@ function piscar() {
     }  
 }
 
-function quebrarLampada() {
+const quebrarLampada = () => {
     lampada.src = "img/quebrada.jpg"
     botoesLidaDesliga(true, true, true)
 }
