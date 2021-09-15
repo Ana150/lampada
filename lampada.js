@@ -21,13 +21,6 @@ const lampadaQuebrada = () => {
     return lampada.src.indexOf('quebrada') !== -1
 }
 
-// function ligarLampada() {
-//     if (!lampadaQuebrada()){
-//         lampada.src = "img/ligada.jpg"
-//         botoesLidaDesliga(true, false, false)
-//     }   
-// }
-
 const ligarLampada = () => {
     if (!lampadaQuebrada()){
         lampada.src = "img/ligada.jpg"
