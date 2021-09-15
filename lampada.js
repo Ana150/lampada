@@ -54,9 +54,11 @@ const piscar = () => {
         idLigar = setInterval(ligarLampada, 500)
         idDesligar = setInterval(desligarLampada, 1000)
         botaoPiscar.textContent = 'Parar'
+        botaoPiscar.style.backgroundColor = "Red"
     }else{
         pararPiscar()
         botaoPiscar.textContent = 'Piscar'
+        botaoPiscar.style.backgroundColor = "Green"
     }  
 }
 
